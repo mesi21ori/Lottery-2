@@ -17,12 +17,20 @@ export default function LoginPage() {
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-pink-600 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
 
       <Card className="w-full max-w-md bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl shadow-2xl text-white relative z-10">
-        <CardHeader className="text-center pt-8 pb-6">
-          <CardTitle className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-pink-400 to-purple-400">
-            Welcome to Dhankesari Play
-          </CardTitle>
-          <CardDescription className="text-white/80 mt-2">Enter your credentials to continue.</CardDescription>
-        </CardHeader>
+      <CardHeader className="text-center pt-8 pb-6">
+  <img
+    src="/logo.jpg"
+    alt="Three Circle 7 Logo"
+    className="mx-auto h-16 w-16 rounded-full mb-4 shadow-lg border border-white/20"
+  />
+  <CardTitle className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 to-green-400">
+    Welcome to Three Circle 7
+  </CardTitle>
+  <CardDescription className="text-white/80 mt-2">
+    Enter your credentials to continue.
+  </CardDescription>
+</CardHeader>
+
         <CardContent className="pb-8">
           <form action={formAction} className="space-y-6">
             <div className="grid gap-2">
@@ -54,13 +62,13 @@ export default function LoginPage() {
             {state?.error && <p className="text-red-400 text-sm text-center">{state.error}</p>}
             <Button
               type="submit"
-              className="w-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg shadow-lg transition-all duration-300"
+              className="w-full bg-gradient-to-r from-red-500 to-green-600 hover:from-pink-600 hover:to-purple-700 text-white font-semibold py-3 rounded-lg shadow-lg transition-all duration-300"
               disabled={isPending}
             >
               {isPending ? "Logging In..." : "Login"}
             </Button>
           </form>
-          <p className="text-center text-white/60 text-sm mt-8">{"© 2025 Dhankesari Play. All rights reserved."}</p>
+          <p className="text-center text-white/60 text-sm mt-8">{"© 2025 Three Circle 7. All rights reserved."}</p>
         </CardContent>
       </Card>
     </div>

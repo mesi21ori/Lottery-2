@@ -18,7 +18,7 @@ export function LotteryDashboard({ username }: LotteryDashboardProps) {
   return (
     <div className="min-h-screen bg-gray-100 flex flex-col">
       {/* Top Bar */}
-      <header className="bg-gradient-to-r from-purple-800 to-purple-900 text-white py-3 px-4 sm:px-6 flex items-center justify-between shadow-md">
+      <header className="bg-gradient-to-r from-red-800 to-red-900 text-white py-3 px-4 sm:px-6 flex items-center justify-between shadow-md">
         <div className="flex items-center gap-4">
           {/* Hide "Welcome" text on small screens when mobile menu is open */}
           <span className={cn("text-lg font-semibold", isMobileMenuOpen && "hidden sm:block")}>

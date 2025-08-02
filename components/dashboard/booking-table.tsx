@@ -11,14 +11,14 @@ export function BookingTable() {
 
   return (
     <Card className="border-none shadow-none">
-      <CardHeader className="bg-gradient-to-r from-purple-700 to-purple-800 text-white rounded-t-lg py-3 px-4">
+      <CardHeader className="bg-gradient-to-r from-red-700 to-red-800 text-white rounded-t-lg py-3 px-4">
         <CardTitle className="text-lg font-semibold text-center">Game Time (No active session)</CardTitle>
       </CardHeader>
       <CardContent className="p-0">
         <div className="overflow-x-auto">
           <Table className="min-w-max">
             <TableHeader>
-              <TableRow className="bg-purple-600 hover:bg-purple-600 text-white">
+              <TableRow className="bg-red-600 hover:bg-red-600 text-white">
                 <TableHead className="w-[120px] text-white py-1 px-2 sm:px-3">Group</TableHead>
                 {Array.from({ length: 10 }, (_, i) => (
                   <TableHead key={i} className="text-center text-white py-1 px-1 sm:px-2">

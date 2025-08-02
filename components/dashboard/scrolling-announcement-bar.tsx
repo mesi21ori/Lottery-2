@@ -6,9 +6,14 @@ import { Button } from "@/components/ui/button"
 export function ScrollingAnnouncementBar() {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
+  const animationFrameId = useRef<number | null>(null)
+  const positionX = useRef<number>(0)
+  const lastTimestamp = useRef<number>(0)
+
   const [isHovered, setIsHovered] = useState(false)
   const [translateX, setTranslateX] = useState(0)
-  const animationFrameId = useRef<number | null>(null)
+
+  const scrollSpeed = 1.5
 
   const scrollingContent = (
     <>
@@ -39,42 +44,43 @@ export function ScrollingAnnouncementBar() {
   useEffect(() => {
     const contentElement = contentRef.current
     const containerElement = scrollContainerRef.current
-
     if (!contentElement || !containerElement) return
 
-    const contentWidth = contentElement.scrollWidth // Actual width of the content
-    const containerWidth = containerElement.clientWidth // Visible width of the container
-    const scrollSpeed = 3 // Speed of scrolling
+    const contentWidth = contentElement.scrollWidth
+    const containerWidth = containerElement.clientWidth
 
-    let animationFrameId: number | null = null
-
-    const animate = () => {
-      if (!isHovered) {
-        setTranslateX((prevX) => {
-          let newX = prevX - scrollSpeed // Move by 'scrollSpeed' pixels
-
-          // If content has scrolled completely off-screen to the left
-          if (newX <= -contentWidth) {
-            // Reset to start from the right side of the container
-            newX = containerWidth
-          }
-          return newX
-        })
-      }
-      animationFrameId = requestAnimationFrame(animate)
-    }
-
-    // Initial position: start from the right edge of the container
+    // ✅ Set initial position ONCE
+    positionX.current = containerWidth
     setTranslateX(containerWidth)
 
-    animationFrameId = requestAnimationFrame(animate)
+    const animate = (timestamp: number) => {
+      if (!lastTimestamp.current) lastTimestamp.current = timestamp
+
+      const deltaTime = timestamp - lastTimestamp.current
+      lastTimestamp.current = timestamp
+
+      // ✅ Update only when not hovered
+      if (!isHovered) {
+        positionX.current -= scrollSpeed * (deltaTime / 16)
+
+        if (positionX.current <= -contentWidth) {
+          positionX.current = containerWidth
+        }
+
+        setTranslateX(positionX.current)
+      }
+
+      animationFrameId.current = requestAnimationFrame(animate)
+    }
+
+    animationFrameId.current = requestAnimationFrame(animate)
 
     return () => {
-      if (animationFrameId) {
-        cancelAnimationFrame(animationFrameId)
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current)
       }
     }
-  }, [isHovered])
+  }, []) // ✅ only run once on mount
 
   return (
     <div
@@ -86,9 +92,13 @@ export function ScrollingAnnouncementBar() {
       <div
         ref={contentRef}
         className="flex flex-nowrap gap-4 absolute"
-        style={{ transform: `translateX(${translateX}px)`, minWidth: "max-content" }}
+        style={{
+          transform: `translateX(${translateX}px)`,
+          minWidth: "max-content",
+          transition: "transform 0.016s linear",
+        }}
       >
-        {scrollingContent} {/* Only one copy for classic marquee effect */}
+        {scrollingContent}
       </div>
     </div>
   )

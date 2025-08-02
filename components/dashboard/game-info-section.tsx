@@ -36,7 +36,7 @@ export function GameInfoSection() {
           </PopoverContent>
         </Popover>
 
-        <Button className="bg-purple-600 hover:bg-purple-700 text-white rounded-full px-4 py-2 text-sm flex-grow sm:flex-grow-0">
+        <Button className="bg-black hover:bg-black text-white rounded-full px-4 py-2 text-sm flex-grow sm:flex-grow-0">
           Dear Single
         </Button>
         <Button className="bg-teal-500 hover:bg-teal-600 text-white rounded-full px-4 py-2 text-sm flex-grow sm:flex-grow-0">
@@ -62,7 +62,7 @@ export function GameInfoSection() {
         </DropdownMenu>
 
         {/* Countdown */}
-        <p className="text-purple-600 font-semibold text-lg w-full text-center sm:w-auto sm:text-left sm:ml-auto mt-2 sm:mt-0">
+        <p className="text-red-600 font-semibold text-lg w-full text-center sm:w-auto sm:text-left sm:ml-auto mt-2 sm:mt-0">
           Countdown: 00:00:00
         </p>
       </div>
