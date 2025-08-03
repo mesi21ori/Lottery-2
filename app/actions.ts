@@ -9,7 +9,7 @@ export async function login(prevState: any, formData: FormData) {
 
   // Simulate authentication
   if (userId === "demo" && pin === "password") {
-    cookies().set("username", userId, {
+    (await cookies()).set("username", userId, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       maxAge: 60 * 60 * 24 * 7, // 1 week

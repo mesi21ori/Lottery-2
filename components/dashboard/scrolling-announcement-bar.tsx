@@ -2,8 +2,11 @@
 
 import { useState, useRef, useEffect } from "react"
 import { Button } from "@/components/ui/button"
+interface ScrollingAnnouncementBarProps {
+  text?: string
+}
 
-export function ScrollingAnnouncementBar() {
+export function ScrollingAnnouncementBar({ text }: ScrollingAnnouncementBarProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
   const animationFrameId = useRef<number | null>(null)
