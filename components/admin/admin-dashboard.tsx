@@ -291,12 +291,12 @@ export function AdminDashboard() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-gradient-to-r from-purple-800 to-purple-900 text-white shadow-lg">
+      <header className="bg-gradient-to-r from-red-800 to-red-900 text-white shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             <div className="flex items-center">
               <img
-                src="/placeholder.svg?height=32&width=32&text=TC7"
+                src="/logo.jpg"
                 alt="Three Circle 7"
                 className="h-8 w-8 rounded-full mr-3"
               />
@@ -315,7 +315,7 @@ export function AdminDashboard() {
                 />
                 <span className="text-sm">Live Updates</span>
               </div>
-              <Button variant="ghost" className="text-white hover:bg-purple-700">
+              <Button variant="ghost" className="text-white hover:bg-red-700">
                 <LogOut className="h-4 w-4 mr-2" />
                 Logout
               </Button>
