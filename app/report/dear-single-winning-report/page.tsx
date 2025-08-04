@@ -1,12 +1,12 @@
 
 'use client'
+
 import { ScrollingAnnouncementBar } from "@/components/dashboard/scrolling-announcement-bar"
 import { GameInfoSection } from "@/components/dashboard/game-info-section"
 import { NavigationMenu } from "@/components/dashboard/navigation-menu"
-
 import { cn } from "@/lib/utils"
 import { GenericTablePageContent } from "@/components/dashboard/generic-table-page-content"
-import { renderDearSingleResultRowCells, renderRajshreePunjabResultRowCells, renderReportRowCells } from "@/components/dashboard/table-row-renderers"
+import {renderReportRowCells } from "@/components/dashboard/table-row-renderers"
 import { useState } from "react"
 
 interface LotteryDashboardProps {

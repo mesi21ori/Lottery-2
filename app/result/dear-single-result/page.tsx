@@ -34,7 +34,7 @@ export default async function DearsingleesultPage({ username, userRole }: Lotter
     { label: "Dear-5th Last", sortable: true },
   ]
 
-  const sessionTimes = ["ALL", "12:00 PM", "04:00 PM", "07:00 PM", "09:00 PM"]
+  const sessionTimes = ["ALL", "MOR", "DAY", "EVE"]
 
  const dummyData = [
     { srNo: 1, date: "2025-07-04", session: "MOR", d1: 2, d2: 5, d3: 3, d4: 0, d5: 5 },
