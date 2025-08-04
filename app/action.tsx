@@ -29,8 +29,9 @@ export async function login(prevState: any, formData: FormData) {
           maxAge: 60 * 60 * 24 * 7, // 1 week
           path: "/",
         })
-        redirect("/lottery-dashboard")
+        redirect("/single/add-single")
   }
+ 
 
   return {
     error: "Invalid credentials. Use 'demo/1234' for user or 'admin/admin123' for admin access.",

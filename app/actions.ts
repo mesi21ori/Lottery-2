@@ -15,7 +15,7 @@ export async function login(prevState: any, formData: FormData) {
       maxAge: 60 * 60 * 24 * 7, // 1 week
       path: "/",
     })
-    redirect("/lottery-dashboard")
+    redirect("/single/add-single")
   } else {
     return { error: "Invalid User ID or PIN." }
   }
