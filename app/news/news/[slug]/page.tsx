@@ -98,8 +98,6 @@ export default async function NewsDetailPage({ params }: Props) {
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-6 text-sm">
           <ol className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-        
-            <li className="text-gray-400">{'/'}</li>
             <li>
               <Link href="/news" className="font-medium text-red-600 hover:text-red-700">
                 News
