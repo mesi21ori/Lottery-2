@@ -86,7 +86,7 @@ export default async function NewsDetailPage({ params }: Props) {
     description: item.excerpt,
     mainEntityOfPage: {
       '@type': 'WebPage',
-      '@id': `/news/${item.slug}`
+      '@id': `/news/news/${item.slug}`
     }
   }
 
@@ -98,11 +98,7 @@ export default async function NewsDetailPage({ params }: Props) {
         {/* Breadcrumb */}
         <nav aria-label="Breadcrumb" className="mb-6 text-sm">
           <ol className="flex items-center gap-2 text-gray-600 dark:text-gray-300">
-            <li>
-              <Link href="/" className="font-medium text-red-600 hover:text-red-700">
-                Home
-              </Link>
-            </li>
+        
             <li className="text-gray-400">{'/'}</li>
             <li>
               <Link href="/news" className="font-medium text-red-600 hover:text-red-700">
@@ -149,7 +145,7 @@ export default async function NewsDetailPage({ params }: Props) {
                 alt={item.title}
                 width={1200}
                 height={630}
-                className="h-auto w-full object-cover"
+                className="h-[300px] w-full object-cover"
                 priority
               />
               <figcaption className="sr-only">{item.title}</figcaption>

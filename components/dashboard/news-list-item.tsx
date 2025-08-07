@@ -21,7 +21,7 @@ export default function NewsListItem({
     date: new Date().toISOString(),
     views: 100
   },
-  href = `/news/${item?.slug}`,
+  href = `/news/news/${item?.slug}`,
   compact = false
 }: Props) {
   return (
