@@ -2,9 +2,7 @@
 import { ScrollingAnnouncementBar } from "@/components/dashboard/scrolling-announcement-bar"
 import { GameInfoSection } from "@/components/dashboard/game-info-section"
 import { NavigationMenu } from "@/components/dashboard/navigation-menu"
-import { Button } from "@/components/ui/button"
-import { ArrowLeft } from "lucide-react"
-import { cookies } from "next/headers"
+
 import { cn } from "@/lib/utils"
 import { GenericTablePageContent } from "@/components/dashboard/generic-table-page-content"
 import { renderReportRowCells } from "@/components/dashboard/table-row-renderers"
