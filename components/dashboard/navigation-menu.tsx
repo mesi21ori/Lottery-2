@@ -85,7 +85,7 @@ export function NavigationMenu({ isMobileMenuOpen, setIsMobileMenuOpen }: Naviga
         className={cn("text-white hover:bg-red-700 px-3 py-1 rounded-md", isMobile && "w-full justify-center py-2")}
         asChild
       >
-        <Link href="/password-change">Password Change</Link>
+        <Link href="/password-change">Profile</Link>
       </Button>
     </>
   )
