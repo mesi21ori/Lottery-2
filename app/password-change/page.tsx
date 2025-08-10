@@ -130,7 +130,7 @@ export default function UserProfilePage() {
       </div>
 
       {/* Main Content with proper top spacing */}
-      <main className="pt-[100px] sm:pt-[108px] pb-6 px-4 sm:px-6 min-h-screen">
+      <main className="pt-[150px] sm:pt-[108px] pb-6 px-4 sm:px-6  mt-[50px]  min-h-screen">
         <div className="max-w-7xl mx-auto">
           {/* Tab Navigation with Game Selection - Mobile Optimized */}
           <div className="flex flex-col gap-4 mb-6">

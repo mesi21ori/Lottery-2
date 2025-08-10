@@ -76,7 +76,10 @@ export function NavigationMenu({ isMobileMenuOpen, setIsMobileMenuOpen }: Naviga
             <Link href="/report/choice-winning-report">Choice Winning Report</Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild className="hover:bg-red-700 cursor-pointer">
-            <Link href="/report/choice-customer-report">Choice Customer Report</Link>
+            <Link href="/report/choice-customer-report">Choice Customer</Link>
+          </DropdownMenuItem>
+             <DropdownMenuItem asChild className="hover:bg-red-700 cursor-pointer">
+            <Link href="/news">News</Link>
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
